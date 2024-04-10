@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
+import{RouterProvider, createBrowserRouter} from 'react-router-dom'
+import HomePage from './Components/Homepage/HomePage';
+import CoinPage from './Components/CoinPage/CoinPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<Layout/>,
+    children:[
+      {
+        path:'',
+        element:<HomePage/>
+      },
+      {
+        path:'/coin/:coinId',
+        element:<CoinPage/>
+      }
+    ]
+  }
+]);
 root.render(
-  <React.StrictMode>
-    <App />
+  <React.StrictMode> 
+  <RouterProvider router={router} />
   </React.StrictMode>
 );
 
