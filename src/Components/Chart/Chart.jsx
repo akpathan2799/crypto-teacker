@@ -108,7 +108,7 @@ function Chart({Coin}) {
 
   
   return (
-    <div className='w-full h-3/5'>
+    <div className='w-full h-3/5 max-[450]: h-64 '>
 
       <Line options={options} data={data} />
 
