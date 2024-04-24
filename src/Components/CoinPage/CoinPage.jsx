@@ -1,10 +1,11 @@
 import { getLinearProgressUtilityClass } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { lazy, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
 import CircularProgress from '@mui/material/CircularProgress';
 import { CurrencyContext } from "../../Context/context.js";
 import Chart from "../Chart/Chart.jsx";
+// const Chart = lazy(()=>{import("../Chart/Chart.jsx")})
 function CoinPage() {
   const { coinId } = useParams();
   const { currency, symbol } = useContext(CurrencyContext);
